@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.of(context)?.title ?? "Null"),
-        actions: [
+        actions: const [
           SwitchWidget(),
         ],
       ),

@@ -3,23 +3,24 @@ import 'package:shared_preferences/shared_preferences.dart';
 const String stateKey = "state";
 
 class SharedPrefs {
-  static SharedPreferences? _preferences;
+  Future<bool> getSharedBool({required String key}) =>
+      SharedPreferences.getInstance()
+          .then((value) => value.getBool(stateKey) ?? false);
 
-  factory SharedPrefs() => SharedPrefs._();
+  Future<int> getSharedInt({required String key}) =>
+      SharedPreferences.getInstance().then((value) => value.getInt(key) ?? 0);
 
-  SharedPrefs._();
+  Future<String> getSharedString({required String key}) =>
+      SharedPreferences.getInstance()
+          .then((value) => value.getString(key) ?? '');
 
-  loadingInitState() async {
-    if (_preferences == null) {
-      _preferences = await SharedPreferences.getInstance();
-      print(_preferences);
-    }
-  }
+  void setSharedBool({required String key, required bool val}) =>
+      SharedPreferences.getInstance().then((value) => value.setBool(key, val));
 
-  bool get getBoolStateTheme => _preferences?.getBool(stateKey) ?? false;
+  void setSharedInt({required String key, required int val}) =>
+      SharedPreferences.getInstance().then((value) => value.setInt(key, val));
 
-  set setBoolStateTheme(bool value) {
-    _preferences?.setBool(stateKey, value);
-  }
+  void setSharedString({required String key, required String val}) =>
+      SharedPreferences.getInstance()
+          .then((value) => value.setString(key, val));
 }
-

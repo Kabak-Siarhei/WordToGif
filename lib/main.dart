@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:word_to_gif/home/repository/shared_preferences.dart';
-import 'l10n/all_locales.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:word_to_gif/home/blocs/theme/theme_bloc.dart';
 import 'package:word_to_gif/home/home.dart';
+import 'l10n/all_locales.dart';
 
-Future<void> main() async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await SharedPrefs().loadingInitState();
-  runApp(MyApp());
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -20,30 +17,27 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
-    bool isDarkTheme = SharedPrefs().getBoolStateTheme;
-
     return BlocProvider<ThemeBloc>(
-      create: (context) => ThemeBloc(ThemeInitialState(isDarkTheme)),
+      create: (context) => ThemeBloc()..add(ThemeInitialEvent()),
       child: BlocBuilder<ThemeBloc, ThemeState>(builder: (context, state) {
-
-        if (state is ThemeChangeState) {
-          isDarkTheme = state.isDarkTheme;
+        if (state is ThemeloadState || state is ThemeChangeState) {
+          
         }
-
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          localizationsDelegates: [
+          localizationsDelegates: const [
             AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
           ],
           supportedLocales: AllLocales.all,
-          theme: isDarkTheme ? ThemeData.dark() : ThemeData.light(),
-          home: HomePage(),
+          // theme: (state is ThemeChangeState).isDarkTheme
+          //     ? ThemeData.dark()
+          //     : ThemeData.light(),
+          home: const HomePage(),
         );
       }),
     );
