@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:word_to_gif/home/blocs/theme/theme_bloc.dart';
 import 'package:word_to_gif/home/home.dart';
-import 'package:word_to_gif/home/ui_kit/circle_page.dart';
+import 'package:word_to_gif/home/ui_kit/loading_page.dart';
 import 'home/blocs/theme/theme_bloc.dart';
 import 'l10n/all_locales.dart';
 
@@ -20,7 +20,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  ThemeData? themeData;
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ThemeBloc>(
@@ -31,21 +30,21 @@ class _MyAppState extends State<MyApp> {
       },
       child: BlocBuilder<ThemeBloc, ThemeState>(builder: (context, state) {
         if (state is ThemeChangeState) {
-          themeData = state.isDarkTheme ? ThemeData.dark() : ThemeData.light();
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: AllLocales.all,
+            theme: state.isDarkTheme ? ThemeData.dark() : ThemeData.light(),
+            home: const HomePage(),
+          );
+        } else {
+          return const LoadingPage();
         }
-
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: const [
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-          ],
-          supportedLocales: AllLocales.all,
-          theme: themeData,
-          home: (state == ThemeLoadState) ? const CirclePage() : const HomePage(),
-        );
       }),
     );
   }
