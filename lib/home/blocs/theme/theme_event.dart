@@ -1,12 +1,12 @@
 part of 'theme_bloc.dart';
 
-@immutable
-abstract class ThemeEvent {}
+@freezed
+class ThemeEvent with _$ThemeEvent {
+    const factory ThemeEvent() = _ThemeEvent;
 
-class ThemeInitialEvent extends ThemeEvent {}
+    factory ThemeEvent.themeInitialEvent() = InitialEvent;
 
-class ThemeChangeEvent extends ThemeEvent {
-  final bool isDarkTheme;
-
-  ThemeChangeEvent(this.isDarkTheme);
+    factory ThemeEvent.themeChangeEvent({required bool isDarkTheme}) = ChangeEvent;
 }
+
+

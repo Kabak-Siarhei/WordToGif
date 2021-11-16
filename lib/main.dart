@@ -25,11 +25,11 @@ class _MyAppState extends State<MyApp> {
     return BlocProvider<ThemeBloc>(
       create: (context) {
         ThemeBloc themeBloc = ThemeBloc();
-        themeBloc.add(ThemeInitialEvent());
+        themeBloc.add(InitialEvent());
         return themeBloc;
       },
       child: BlocBuilder<ThemeBloc, ThemeState>(builder: (context, state) {
-        if (state is ThemeChangeState) {
+        if (state is ChangeState) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             localizationsDelegates: const [
