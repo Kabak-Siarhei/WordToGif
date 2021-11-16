@@ -5,7 +5,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:word_to_gif/home/blocs/theme/theme_bloc.dart';
 import 'package:word_to_gif/home/home.dart';
 import 'package:word_to_gif/home/ui_kit/loading_page.dart';
-import 'home/blocs/theme/theme_bloc.dart';
 import 'l10n/all_locales.dart';
 
 void main() {

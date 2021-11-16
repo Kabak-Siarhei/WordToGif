@@ -17,10 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ThemeEventTearOff {
   const _$ThemeEventTearOff();
 
-  _ThemeEvent call() {
-    return const _ThemeEvent();
-  }
-
   InitialEvent themeInitialEvent() {
     return InitialEvent();
   }
@@ -38,44 +34,38 @@ const $ThemeEvent = _$ThemeEventTearOff();
 /// @nodoc
 mixin _$ThemeEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function() themeInitialEvent,
     required TResult Function(bool isDarkTheme) themeChangeEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? themeInitialEvent,
     TResult Function(bool isDarkTheme)? themeChangeEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeInitialEvent,
     TResult Function(bool isDarkTheme)? themeChangeEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ThemeEvent value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(InitialEvent value) themeInitialEvent,
     required TResult Function(ChangeEvent value) themeChangeEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_ThemeEvent value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitialEvent value)? themeInitialEvent,
     TResult Function(ChangeEvent value)? themeChangeEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ThemeEvent value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialEvent value)? themeInitialEvent,
     TResult Function(ChangeEvent value)? themeChangeEvent,
     required TResult orElse(),
@@ -97,116 +87,6 @@ class _$ThemeEventCopyWithImpl<$Res> implements $ThemeEventCopyWith<$Res> {
   final ThemeEvent _value;
   // ignore: unused_field
   final $Res Function(ThemeEvent) _then;
-}
-
-/// @nodoc
-abstract class _$ThemeEventCopyWith<$Res> {
-  factory _$ThemeEventCopyWith(
-          _ThemeEvent value, $Res Function(_ThemeEvent) then) =
-      __$ThemeEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ThemeEventCopyWithImpl<$Res> extends _$ThemeEventCopyWithImpl<$Res>
-    implements _$ThemeEventCopyWith<$Res> {
-  __$ThemeEventCopyWithImpl(
-      _ThemeEvent _value, $Res Function(_ThemeEvent) _then)
-      : super(_value, (v) => _then(v as _ThemeEvent));
-
-  @override
-  _ThemeEvent get _value => super._value as _ThemeEvent;
-}
-
-/// @nodoc
-
-class _$_ThemeEvent implements _ThemeEvent {
-  const _$_ThemeEvent();
-
-  @override
-  String toString() {
-    return 'ThemeEvent()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ThemeEvent);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
-    required TResult Function() themeInitialEvent,
-    required TResult Function(bool isDarkTheme) themeChangeEvent,
-  }) {
-    return $default();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function()? themeInitialEvent,
-    TResult Function(bool isDarkTheme)? themeChangeEvent,
-  }) {
-    return $default?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function()? themeInitialEvent,
-    TResult Function(bool isDarkTheme)? themeChangeEvent,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ThemeEvent value) $default, {
-    required TResult Function(InitialEvent value) themeInitialEvent,
-    required TResult Function(ChangeEvent value) themeChangeEvent,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_ThemeEvent value)? $default, {
-    TResult Function(InitialEvent value)? themeInitialEvent,
-    TResult Function(ChangeEvent value)? themeChangeEvent,
-  }) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ThemeEvent value)? $default, {
-    TResult Function(InitialEvent value)? themeInitialEvent,
-    TResult Function(ChangeEvent value)? themeChangeEvent,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ThemeEvent implements ThemeEvent {
-  const factory _ThemeEvent() = _$_ThemeEvent;
 }
 
 /// @nodoc
@@ -248,8 +128,7 @@ class _$InitialEvent implements InitialEvent {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function() themeInitialEvent,
     required TResult Function(bool isDarkTheme) themeChangeEvent,
   }) {
@@ -258,8 +137,7 @@ class _$InitialEvent implements InitialEvent {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? themeInitialEvent,
     TResult Function(bool isDarkTheme)? themeChangeEvent,
   }) {
@@ -268,8 +146,7 @@ class _$InitialEvent implements InitialEvent {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeInitialEvent,
     TResult Function(bool isDarkTheme)? themeChangeEvent,
     required TResult orElse(),
@@ -282,8 +159,7 @@ class _$InitialEvent implements InitialEvent {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ThemeEvent value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(InitialEvent value) themeInitialEvent,
     required TResult Function(ChangeEvent value) themeChangeEvent,
   }) {
@@ -292,8 +168,7 @@ class _$InitialEvent implements InitialEvent {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_ThemeEvent value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitialEvent value)? themeInitialEvent,
     TResult Function(ChangeEvent value)? themeChangeEvent,
   }) {
@@ -302,8 +177,7 @@ class _$InitialEvent implements InitialEvent {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ThemeEvent value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialEvent value)? themeInitialEvent,
     TResult Function(ChangeEvent value)? themeChangeEvent,
     required TResult orElse(),
@@ -382,8 +256,7 @@ class _$ChangeEvent implements ChangeEvent {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function() themeInitialEvent,
     required TResult Function(bool isDarkTheme) themeChangeEvent,
   }) {
@@ -392,8 +265,7 @@ class _$ChangeEvent implements ChangeEvent {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? themeInitialEvent,
     TResult Function(bool isDarkTheme)? themeChangeEvent,
   }) {
@@ -402,8 +274,7 @@ class _$ChangeEvent implements ChangeEvent {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeInitialEvent,
     TResult Function(bool isDarkTheme)? themeChangeEvent,
     required TResult orElse(),
@@ -416,8 +287,7 @@ class _$ChangeEvent implements ChangeEvent {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ThemeEvent value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(InitialEvent value) themeInitialEvent,
     required TResult Function(ChangeEvent value) themeChangeEvent,
   }) {
@@ -426,8 +296,7 @@ class _$ChangeEvent implements ChangeEvent {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_ThemeEvent value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitialEvent value)? themeInitialEvent,
     TResult Function(ChangeEvent value)? themeChangeEvent,
   }) {
@@ -436,8 +305,7 @@ class _$ChangeEvent implements ChangeEvent {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ThemeEvent value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(InitialEvent value)? themeInitialEvent,
     TResult Function(ChangeEvent value)? themeChangeEvent,
     required TResult orElse(),
@@ -462,10 +330,6 @@ abstract class ChangeEvent implements ThemeEvent {
 class _$ThemeStateTearOff {
   const _$ThemeStateTearOff();
 
-  _ThemeState call() {
-    return const _ThemeState();
-  }
-
   LoadingState themeLoadingState() {
     return LoadingState();
   }
@@ -483,44 +347,38 @@ const $ThemeState = _$ThemeStateTearOff();
 /// @nodoc
 mixin _$ThemeState {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function() themeLoadingState,
     required TResult Function(bool isDarkTheme) themeChangeState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? themeLoadingState,
     TResult Function(bool isDarkTheme)? themeChangeState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeLoadingState,
     TResult Function(bool isDarkTheme)? themeChangeState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ThemeState value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(LoadingState value) themeLoadingState,
     required TResult Function(ChangeState value) themeChangeState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_ThemeState value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadingState value)? themeLoadingState,
     TResult Function(ChangeState value)? themeChangeState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ThemeState value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadingState value)? themeLoadingState,
     TResult Function(ChangeState value)? themeChangeState,
     required TResult orElse(),
@@ -542,116 +400,6 @@ class _$ThemeStateCopyWithImpl<$Res> implements $ThemeStateCopyWith<$Res> {
   final ThemeState _value;
   // ignore: unused_field
   final $Res Function(ThemeState) _then;
-}
-
-/// @nodoc
-abstract class _$ThemeStateCopyWith<$Res> {
-  factory _$ThemeStateCopyWith(
-          _ThemeState value, $Res Function(_ThemeState) then) =
-      __$ThemeStateCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ThemeStateCopyWithImpl<$Res> extends _$ThemeStateCopyWithImpl<$Res>
-    implements _$ThemeStateCopyWith<$Res> {
-  __$ThemeStateCopyWithImpl(
-      _ThemeState _value, $Res Function(_ThemeState) _then)
-      : super(_value, (v) => _then(v as _ThemeState));
-
-  @override
-  _ThemeState get _value => super._value as _ThemeState;
-}
-
-/// @nodoc
-
-class _$_ThemeState implements _ThemeState {
-  const _$_ThemeState();
-
-  @override
-  String toString() {
-    return 'ThemeState()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ThemeState);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
-    required TResult Function() themeLoadingState,
-    required TResult Function(bool isDarkTheme) themeChangeState,
-  }) {
-    return $default();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function()? themeLoadingState,
-    TResult Function(bool isDarkTheme)? themeChangeState,
-  }) {
-    return $default?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
-    TResult Function()? themeLoadingState,
-    TResult Function(bool isDarkTheme)? themeChangeState,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ThemeState value) $default, {
-    required TResult Function(LoadingState value) themeLoadingState,
-    required TResult Function(ChangeState value) themeChangeState,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_ThemeState value)? $default, {
-    TResult Function(LoadingState value)? themeLoadingState,
-    TResult Function(ChangeState value)? themeChangeState,
-  }) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ThemeState value)? $default, {
-    TResult Function(LoadingState value)? themeLoadingState,
-    TResult Function(ChangeState value)? themeChangeState,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ThemeState implements ThemeState {
-  const factory _ThemeState() = _$_ThemeState;
 }
 
 /// @nodoc
@@ -693,8 +441,7 @@ class _$LoadingState implements LoadingState {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function() themeLoadingState,
     required TResult Function(bool isDarkTheme) themeChangeState,
   }) {
@@ -703,8 +450,7 @@ class _$LoadingState implements LoadingState {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? themeLoadingState,
     TResult Function(bool isDarkTheme)? themeChangeState,
   }) {
@@ -713,8 +459,7 @@ class _$LoadingState implements LoadingState {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeLoadingState,
     TResult Function(bool isDarkTheme)? themeChangeState,
     required TResult orElse(),
@@ -727,8 +472,7 @@ class _$LoadingState implements LoadingState {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ThemeState value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(LoadingState value) themeLoadingState,
     required TResult Function(ChangeState value) themeChangeState,
   }) {
@@ -737,8 +481,7 @@ class _$LoadingState implements LoadingState {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_ThemeState value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadingState value)? themeLoadingState,
     TResult Function(ChangeState value)? themeChangeState,
   }) {
@@ -747,8 +490,7 @@ class _$LoadingState implements LoadingState {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ThemeState value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadingState value)? themeLoadingState,
     TResult Function(ChangeState value)? themeChangeState,
     required TResult orElse(),
@@ -827,8 +569,7 @@ class _$ChangeState implements ChangeState {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function() $default, {
+  TResult when<TResult extends Object?>({
     required TResult Function() themeLoadingState,
     required TResult Function(bool isDarkTheme) themeChangeState,
   }) {
@@ -837,8 +578,7 @@ class _$ChangeState implements ChangeState {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? themeLoadingState,
     TResult Function(bool isDarkTheme)? themeChangeState,
   }) {
@@ -847,8 +587,7 @@ class _$ChangeState implements ChangeState {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function()? $default, {
+  TResult maybeWhen<TResult extends Object?>({
     TResult Function()? themeLoadingState,
     TResult Function(bool isDarkTheme)? themeChangeState,
     required TResult orElse(),
@@ -861,8 +600,7 @@ class _$ChangeState implements ChangeState {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_ThemeState value) $default, {
+  TResult map<TResult extends Object?>({
     required TResult Function(LoadingState value) themeLoadingState,
     required TResult Function(ChangeState value) themeChangeState,
   }) {
@@ -871,8 +609,7 @@ class _$ChangeState implements ChangeState {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_ThemeState value)? $default, {
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadingState value)? themeLoadingState,
     TResult Function(ChangeState value)? themeChangeState,
   }) {
@@ -881,8 +618,7 @@ class _$ChangeState implements ChangeState {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_ThemeState value)? $default, {
+  TResult maybeMap<TResult extends Object?>({
     TResult Function(LoadingState value)? themeLoadingState,
     TResult Function(ChangeState value)? themeChangeState,
     required TResult orElse(),
