@@ -9,7 +9,7 @@ part 'theme_bloc.freezed.dart';
 part 'theme_state.dart';
 
 class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
-  ThemeBloc() : super(LoadingState());
+  ThemeBloc() : super(ThemeState.themeLoadingState());
 
   @override
   Stream<ThemeState> mapEventToState(ThemeEvent event) async* {
@@ -19,13 +19,13 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
     );
   }
 
-  Stream<ThemeState> _themeInitialEvent(InitialEvent event) async* {
-    final isDarkTheme = await SharedPrefs().getSharedBool(key: stateKey);
-    yield ChangeState(isDarkTheme: isDarkTheme);
+  Stream<ThemeState> _themeInitialEvent(_InitialEvent event) async* {
+    final isDarkTheme = await SharedPrefs().getSharedBool(key: themeKey);
+    yield _ChangeState(isDarkTheme: isDarkTheme);
   }
 
-  Stream<ThemeState> _themeChangeEvent(ChangeEvent event) async* {
-    SharedPrefs().setSharedBool(key: stateKey, val: event.isDarkTheme);
-    yield ChangeState(isDarkTheme: event.isDarkTheme);
+  Stream<ThemeState> _themeChangeEvent(_ChangeEvent event) async* {
+    SharedPrefs().setSharedBool(key: themeKey, val: event.isDarkTheme);
+    yield _ChangeState(isDarkTheme: event.isDarkTheme);
   }
 }

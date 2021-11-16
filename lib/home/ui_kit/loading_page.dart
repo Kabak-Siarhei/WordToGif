@@ -26,7 +26,7 @@ class LoadingPage extends StatelessWidget {
           ],
         ),
         body: const Center(
-          child: const CircularProgressIndicator(),
+          child: CircularProgressIndicator(),
         ),
       ),
     );

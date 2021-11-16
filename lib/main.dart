@@ -22,28 +22,23 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ThemeBloc>(
-      create: (context) {
-        ThemeBloc themeBloc = ThemeBloc();
-        themeBloc.add(InitialEvent());
-        return themeBloc;
-      },
+      create: (context) => ThemeBloc()..add(ThemeEvent.themeInitialEvent()),
       child: BlocBuilder<ThemeBloc, ThemeState>(builder: (context, state) {
-        if (state is ChangeState) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            localizationsDelegates: const [
-              AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-            ],
-            supportedLocales: AllLocales.all,
-            theme: state.isDarkTheme ? ThemeData.dark() : ThemeData.light(),
-            home: const HomePage(),
-          );
-        } else {
-          return const LoadingPage();
-        }
+        return state.maybeWhen(
+            themeChangeState: (value) => MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  localizationsDelegates: const [
+                    AppLocalizations.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                  ],
+                  supportedLocales: AllLocales.all,
+                  theme: value ? ThemeData.dark() : ThemeData.light(),
+                  home: const HomePage(),
+                ),
+            themeLoadingState: () => const LoadingPage(),
+            orElse: () => const LoadingPage());
       }),
     );
   }

@@ -17,12 +17,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ThemeEventTearOff {
   const _$ThemeEventTearOff();
 
-  InitialEvent themeInitialEvent() {
-    return InitialEvent();
+  _InitialEvent themeInitialEvent() {
+    return _InitialEvent();
   }
 
-  ChangeEvent themeChangeEvent({required bool isDarkTheme}) {
-    return ChangeEvent(
+  _ChangeEvent themeChangeEvent({required bool isDarkTheme}) {
+    return _ChangeEvent(
       isDarkTheme: isDarkTheme,
     );
   }
@@ -54,20 +54,20 @@ mixin _$ThemeEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitialEvent value) themeInitialEvent,
-    required TResult Function(ChangeEvent value) themeChangeEvent,
+    required TResult Function(_InitialEvent value) themeInitialEvent,
+    required TResult Function(_ChangeEvent value) themeChangeEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialEvent value)? themeInitialEvent,
-    TResult Function(ChangeEvent value)? themeChangeEvent,
+    TResult Function(_InitialEvent value)? themeInitialEvent,
+    TResult Function(_ChangeEvent value)? themeChangeEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitialEvent value)? themeInitialEvent,
-    TResult Function(ChangeEvent value)? themeChangeEvent,
+    TResult Function(_InitialEvent value)? themeInitialEvent,
+    TResult Function(_ChangeEvent value)? themeChangeEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -90,27 +90,27 @@ class _$ThemeEventCopyWithImpl<$Res> implements $ThemeEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $InitialEventCopyWith<$Res> {
-  factory $InitialEventCopyWith(
-          InitialEvent value, $Res Function(InitialEvent) then) =
-      _$InitialEventCopyWithImpl<$Res>;
+abstract class _$InitialEventCopyWith<$Res> {
+  factory _$InitialEventCopyWith(
+          _InitialEvent value, $Res Function(_InitialEvent) then) =
+      __$InitialEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitialEventCopyWithImpl<$Res> extends _$ThemeEventCopyWithImpl<$Res>
-    implements $InitialEventCopyWith<$Res> {
-  _$InitialEventCopyWithImpl(
-      InitialEvent _value, $Res Function(InitialEvent) _then)
-      : super(_value, (v) => _then(v as InitialEvent));
+class __$InitialEventCopyWithImpl<$Res> extends _$ThemeEventCopyWithImpl<$Res>
+    implements _$InitialEventCopyWith<$Res> {
+  __$InitialEventCopyWithImpl(
+      _InitialEvent _value, $Res Function(_InitialEvent) _then)
+      : super(_value, (v) => _then(v as _InitialEvent));
 
   @override
-  InitialEvent get _value => super._value as InitialEvent;
+  _InitialEvent get _value => super._value as _InitialEvent;
 }
 
 /// @nodoc
 
-class _$InitialEvent implements InitialEvent {
-  _$InitialEvent();
+class _$_InitialEvent implements _InitialEvent {
+  _$_InitialEvent();
 
   @override
   String toString() {
@@ -120,7 +120,7 @@ class _$InitialEvent implements InitialEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is InitialEvent);
+        (other.runtimeType == runtimeType && other is _InitialEvent);
   }
 
   @override
@@ -160,8 +160,8 @@ class _$InitialEvent implements InitialEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitialEvent value) themeInitialEvent,
-    required TResult Function(ChangeEvent value) themeChangeEvent,
+    required TResult Function(_InitialEvent value) themeInitialEvent,
+    required TResult Function(_ChangeEvent value) themeChangeEvent,
   }) {
     return themeInitialEvent(this);
   }
@@ -169,8 +169,8 @@ class _$InitialEvent implements InitialEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialEvent value)? themeInitialEvent,
-    TResult Function(ChangeEvent value)? themeChangeEvent,
+    TResult Function(_InitialEvent value)? themeInitialEvent,
+    TResult Function(_ChangeEvent value)? themeChangeEvent,
   }) {
     return themeInitialEvent?.call(this);
   }
@@ -178,8 +178,8 @@ class _$InitialEvent implements InitialEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitialEvent value)? themeInitialEvent,
-    TResult Function(ChangeEvent value)? themeChangeEvent,
+    TResult Function(_InitialEvent value)? themeInitialEvent,
+    TResult Function(_ChangeEvent value)? themeChangeEvent,
     required TResult orElse(),
   }) {
     if (themeInitialEvent != null) {
@@ -189,33 +189,33 @@ class _$InitialEvent implements InitialEvent {
   }
 }
 
-abstract class InitialEvent implements ThemeEvent {
-  factory InitialEvent() = _$InitialEvent;
+abstract class _InitialEvent implements ThemeEvent {
+  factory _InitialEvent() = _$_InitialEvent;
 }
 
 /// @nodoc
-abstract class $ChangeEventCopyWith<$Res> {
-  factory $ChangeEventCopyWith(
-          ChangeEvent value, $Res Function(ChangeEvent) then) =
-      _$ChangeEventCopyWithImpl<$Res>;
+abstract class _$ChangeEventCopyWith<$Res> {
+  factory _$ChangeEventCopyWith(
+          _ChangeEvent value, $Res Function(_ChangeEvent) then) =
+      __$ChangeEventCopyWithImpl<$Res>;
   $Res call({bool isDarkTheme});
 }
 
 /// @nodoc
-class _$ChangeEventCopyWithImpl<$Res> extends _$ThemeEventCopyWithImpl<$Res>
-    implements $ChangeEventCopyWith<$Res> {
-  _$ChangeEventCopyWithImpl(
-      ChangeEvent _value, $Res Function(ChangeEvent) _then)
-      : super(_value, (v) => _then(v as ChangeEvent));
+class __$ChangeEventCopyWithImpl<$Res> extends _$ThemeEventCopyWithImpl<$Res>
+    implements _$ChangeEventCopyWith<$Res> {
+  __$ChangeEventCopyWithImpl(
+      _ChangeEvent _value, $Res Function(_ChangeEvent) _then)
+      : super(_value, (v) => _then(v as _ChangeEvent));
 
   @override
-  ChangeEvent get _value => super._value as ChangeEvent;
+  _ChangeEvent get _value => super._value as _ChangeEvent;
 
   @override
   $Res call({
     Object? isDarkTheme = freezed,
   }) {
-    return _then(ChangeEvent(
+    return _then(_ChangeEvent(
       isDarkTheme: isDarkTheme == freezed
           ? _value.isDarkTheme
           : isDarkTheme // ignore: cast_nullable_to_non_nullable
@@ -226,8 +226,8 @@ class _$ChangeEventCopyWithImpl<$Res> extends _$ThemeEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeEvent implements ChangeEvent {
-  _$ChangeEvent({required this.isDarkTheme});
+class _$_ChangeEvent implements _ChangeEvent {
+  _$_ChangeEvent({required this.isDarkTheme});
 
   @override
   final bool isDarkTheme;
@@ -241,7 +241,7 @@ class _$ChangeEvent implements ChangeEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ChangeEvent &&
+            other is _ChangeEvent &&
             (identical(other.isDarkTheme, isDarkTheme) ||
                 other.isDarkTheme == isDarkTheme));
   }
@@ -251,8 +251,8 @@ class _$ChangeEvent implements ChangeEvent {
 
   @JsonKey(ignore: true)
   @override
-  $ChangeEventCopyWith<ChangeEvent> get copyWith =>
-      _$ChangeEventCopyWithImpl<ChangeEvent>(this, _$identity);
+  _$ChangeEventCopyWith<_ChangeEvent> get copyWith =>
+      __$ChangeEventCopyWithImpl<_ChangeEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -288,8 +288,8 @@ class _$ChangeEvent implements ChangeEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitialEvent value) themeInitialEvent,
-    required TResult Function(ChangeEvent value) themeChangeEvent,
+    required TResult Function(_InitialEvent value) themeInitialEvent,
+    required TResult Function(_ChangeEvent value) themeChangeEvent,
   }) {
     return themeChangeEvent(this);
   }
@@ -297,8 +297,8 @@ class _$ChangeEvent implements ChangeEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(InitialEvent value)? themeInitialEvent,
-    TResult Function(ChangeEvent value)? themeChangeEvent,
+    TResult Function(_InitialEvent value)? themeInitialEvent,
+    TResult Function(_ChangeEvent value)? themeChangeEvent,
   }) {
     return themeChangeEvent?.call(this);
   }
@@ -306,8 +306,8 @@ class _$ChangeEvent implements ChangeEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitialEvent value)? themeInitialEvent,
-    TResult Function(ChangeEvent value)? themeChangeEvent,
+    TResult Function(_InitialEvent value)? themeInitialEvent,
+    TResult Function(_ChangeEvent value)? themeChangeEvent,
     required TResult orElse(),
   }) {
     if (themeChangeEvent != null) {
@@ -317,12 +317,12 @@ class _$ChangeEvent implements ChangeEvent {
   }
 }
 
-abstract class ChangeEvent implements ThemeEvent {
-  factory ChangeEvent({required bool isDarkTheme}) = _$ChangeEvent;
+abstract class _ChangeEvent implements ThemeEvent {
+  factory _ChangeEvent({required bool isDarkTheme}) = _$_ChangeEvent;
 
   bool get isDarkTheme;
   @JsonKey(ignore: true)
-  $ChangeEventCopyWith<ChangeEvent> get copyWith =>
+  _$ChangeEventCopyWith<_ChangeEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -330,12 +330,12 @@ abstract class ChangeEvent implements ThemeEvent {
 class _$ThemeStateTearOff {
   const _$ThemeStateTearOff();
 
-  LoadingState themeLoadingState() {
-    return LoadingState();
+  _LoadingState themeLoadingState() {
+    return _LoadingState();
   }
 
-  ChangeState themeChangeState({required bool isDarkTheme}) {
-    return ChangeState(
+  _ChangeState themeChangeState({required bool isDarkTheme}) {
+    return _ChangeState(
       isDarkTheme: isDarkTheme,
     );
   }
@@ -367,20 +367,20 @@ mixin _$ThemeState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadingState value) themeLoadingState,
-    required TResult Function(ChangeState value) themeChangeState,
+    required TResult Function(_LoadingState value) themeLoadingState,
+    required TResult Function(_ChangeState value) themeChangeState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingState value)? themeLoadingState,
-    TResult Function(ChangeState value)? themeChangeState,
+    TResult Function(_LoadingState value)? themeLoadingState,
+    TResult Function(_ChangeState value)? themeChangeState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadingState value)? themeLoadingState,
-    TResult Function(ChangeState value)? themeChangeState,
+    TResult Function(_LoadingState value)? themeLoadingState,
+    TResult Function(_ChangeState value)? themeChangeState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -403,27 +403,27 @@ class _$ThemeStateCopyWithImpl<$Res> implements $ThemeStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $LoadingStateCopyWith<$Res> {
-  factory $LoadingStateCopyWith(
-          LoadingState value, $Res Function(LoadingState) then) =
-      _$LoadingStateCopyWithImpl<$Res>;
+abstract class _$LoadingStateCopyWith<$Res> {
+  factory _$LoadingStateCopyWith(
+          _LoadingState value, $Res Function(_LoadingState) then) =
+      __$LoadingStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingStateCopyWithImpl<$Res> extends _$ThemeStateCopyWithImpl<$Res>
-    implements $LoadingStateCopyWith<$Res> {
-  _$LoadingStateCopyWithImpl(
-      LoadingState _value, $Res Function(LoadingState) _then)
-      : super(_value, (v) => _then(v as LoadingState));
+class __$LoadingStateCopyWithImpl<$Res> extends _$ThemeStateCopyWithImpl<$Res>
+    implements _$LoadingStateCopyWith<$Res> {
+  __$LoadingStateCopyWithImpl(
+      _LoadingState _value, $Res Function(_LoadingState) _then)
+      : super(_value, (v) => _then(v as _LoadingState));
 
   @override
-  LoadingState get _value => super._value as LoadingState;
+  _LoadingState get _value => super._value as _LoadingState;
 }
 
 /// @nodoc
 
-class _$LoadingState implements LoadingState {
-  _$LoadingState();
+class _$_LoadingState implements _LoadingState {
+  _$_LoadingState();
 
   @override
   String toString() {
@@ -433,7 +433,7 @@ class _$LoadingState implements LoadingState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is LoadingState);
+        (other.runtimeType == runtimeType && other is _LoadingState);
   }
 
   @override
@@ -473,8 +473,8 @@ class _$LoadingState implements LoadingState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadingState value) themeLoadingState,
-    required TResult Function(ChangeState value) themeChangeState,
+    required TResult Function(_LoadingState value) themeLoadingState,
+    required TResult Function(_ChangeState value) themeChangeState,
   }) {
     return themeLoadingState(this);
   }
@@ -482,8 +482,8 @@ class _$LoadingState implements LoadingState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingState value)? themeLoadingState,
-    TResult Function(ChangeState value)? themeChangeState,
+    TResult Function(_LoadingState value)? themeLoadingState,
+    TResult Function(_ChangeState value)? themeChangeState,
   }) {
     return themeLoadingState?.call(this);
   }
@@ -491,8 +491,8 @@ class _$LoadingState implements LoadingState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadingState value)? themeLoadingState,
-    TResult Function(ChangeState value)? themeChangeState,
+    TResult Function(_LoadingState value)? themeLoadingState,
+    TResult Function(_ChangeState value)? themeChangeState,
     required TResult orElse(),
   }) {
     if (themeLoadingState != null) {
@@ -502,33 +502,33 @@ class _$LoadingState implements LoadingState {
   }
 }
 
-abstract class LoadingState implements ThemeState {
-  factory LoadingState() = _$LoadingState;
+abstract class _LoadingState implements ThemeState {
+  factory _LoadingState() = _$_LoadingState;
 }
 
 /// @nodoc
-abstract class $ChangeStateCopyWith<$Res> {
-  factory $ChangeStateCopyWith(
-          ChangeState value, $Res Function(ChangeState) then) =
-      _$ChangeStateCopyWithImpl<$Res>;
+abstract class _$ChangeStateCopyWith<$Res> {
+  factory _$ChangeStateCopyWith(
+          _ChangeState value, $Res Function(_ChangeState) then) =
+      __$ChangeStateCopyWithImpl<$Res>;
   $Res call({bool isDarkTheme});
 }
 
 /// @nodoc
-class _$ChangeStateCopyWithImpl<$Res> extends _$ThemeStateCopyWithImpl<$Res>
-    implements $ChangeStateCopyWith<$Res> {
-  _$ChangeStateCopyWithImpl(
-      ChangeState _value, $Res Function(ChangeState) _then)
-      : super(_value, (v) => _then(v as ChangeState));
+class __$ChangeStateCopyWithImpl<$Res> extends _$ThemeStateCopyWithImpl<$Res>
+    implements _$ChangeStateCopyWith<$Res> {
+  __$ChangeStateCopyWithImpl(
+      _ChangeState _value, $Res Function(_ChangeState) _then)
+      : super(_value, (v) => _then(v as _ChangeState));
 
   @override
-  ChangeState get _value => super._value as ChangeState;
+  _ChangeState get _value => super._value as _ChangeState;
 
   @override
   $Res call({
     Object? isDarkTheme = freezed,
   }) {
-    return _then(ChangeState(
+    return _then(_ChangeState(
       isDarkTheme: isDarkTheme == freezed
           ? _value.isDarkTheme
           : isDarkTheme // ignore: cast_nullable_to_non_nullable
@@ -539,8 +539,8 @@ class _$ChangeStateCopyWithImpl<$Res> extends _$ThemeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChangeState implements ChangeState {
-  _$ChangeState({required this.isDarkTheme});
+class _$_ChangeState implements _ChangeState {
+  _$_ChangeState({required this.isDarkTheme});
 
   @override
   final bool isDarkTheme;
@@ -554,7 +554,7 @@ class _$ChangeState implements ChangeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ChangeState &&
+            other is _ChangeState &&
             (identical(other.isDarkTheme, isDarkTheme) ||
                 other.isDarkTheme == isDarkTheme));
   }
@@ -564,8 +564,8 @@ class _$ChangeState implements ChangeState {
 
   @JsonKey(ignore: true)
   @override
-  $ChangeStateCopyWith<ChangeState> get copyWith =>
-      _$ChangeStateCopyWithImpl<ChangeState>(this, _$identity);
+  _$ChangeStateCopyWith<_ChangeState> get copyWith =>
+      __$ChangeStateCopyWithImpl<_ChangeState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -601,8 +601,8 @@ class _$ChangeState implements ChangeState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadingState value) themeLoadingState,
-    required TResult Function(ChangeState value) themeChangeState,
+    required TResult Function(_LoadingState value) themeLoadingState,
+    required TResult Function(_ChangeState value) themeChangeState,
   }) {
     return themeChangeState(this);
   }
@@ -610,8 +610,8 @@ class _$ChangeState implements ChangeState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(LoadingState value)? themeLoadingState,
-    TResult Function(ChangeState value)? themeChangeState,
+    TResult Function(_LoadingState value)? themeLoadingState,
+    TResult Function(_ChangeState value)? themeChangeState,
   }) {
     return themeChangeState?.call(this);
   }
@@ -619,8 +619,8 @@ class _$ChangeState implements ChangeState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadingState value)? themeLoadingState,
-    TResult Function(ChangeState value)? themeChangeState,
+    TResult Function(_LoadingState value)? themeLoadingState,
+    TResult Function(_ChangeState value)? themeChangeState,
     required TResult orElse(),
   }) {
     if (themeChangeState != null) {
@@ -630,11 +630,11 @@ class _$ChangeState implements ChangeState {
   }
 }
 
-abstract class ChangeState implements ThemeState {
-  factory ChangeState({required bool isDarkTheme}) = _$ChangeState;
+abstract class _ChangeState implements ThemeState {
+  factory _ChangeState({required bool isDarkTheme}) = _$_ChangeState;
 
   bool get isDarkTheme;
   @JsonKey(ignore: true)
-  $ChangeStateCopyWith<ChangeState> get copyWith =>
+  _$ChangeStateCopyWith<_ChangeState> get copyWith =>
       throw _privateConstructorUsedError;
 }
