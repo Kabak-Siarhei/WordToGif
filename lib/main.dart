@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ThemeBloc>(
-      create: (context) => ThemeBloc()..add(ThemeEvent.themeInitialEvent()),
+      create: (context) => ThemeBloc()..add(ThemeEvent.initialEvent()),
       child: BlocBuilder<ThemeBloc, ThemeState>(builder: (context, state) {
         return state.maybeWhen(
             themeChangeState: (value) => MaterialApp(

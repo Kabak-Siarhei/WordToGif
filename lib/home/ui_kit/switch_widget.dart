@@ -16,7 +16,7 @@ class SwitchWidget extends StatelessWidget {
             onChanged: (changeTheme) {
               context
                   .read<ThemeBloc>()
-                  .add(ThemeEvent.themeChangeEvent(isDarkTheme: changeTheme));
+                  .add(ThemeEvent.changeEvent(isDarkTheme: changeTheme));
             },
           ),
           orElse: () => const SizedBox(),
