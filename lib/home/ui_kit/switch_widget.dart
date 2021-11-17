@@ -9,17 +9,16 @@ class SwitchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ThemeBloc, ThemeState>(
       builder: (context, state) {
-        return state.maybeWhen(
-          loadingState: () => const SizedBox(),
+        return state.map(
+          loadingState: (value) => const SizedBox(),
           changeState: (value) => Switch(
-            value: value,
+            value: value.isDarkTheme,
             onChanged: (changeTheme) {
               context
                   .read<ThemeBloc>()
                   .add(ThemeEvent.changeEvent(isDarkTheme: changeTheme));
             },
           ),
-          orElse: () => const SizedBox(),
         );
       },
     );

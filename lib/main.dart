@@ -24,21 +24,21 @@ class _MyAppState extends State<MyApp> {
     return BlocProvider<ThemeBloc>(
       create: (context) => ThemeBloc()..add(ThemeEvent.initialEvent()),
       child: BlocBuilder<ThemeBloc, ThemeState>(builder: (context, state) {
-        return state.maybeWhen(
-            changeState: (value) => MaterialApp(
-                  debugShowCheckedModeBanner: false,
-                  localizationsDelegates: const [
-                    AppLocalizations.delegate,
-                    GlobalMaterialLocalizations.delegate,
-                    GlobalCupertinoLocalizations.delegate,
-                    GlobalWidgetsLocalizations.delegate,
-                  ],
-                  supportedLocales: AllLocales.all,
-                  theme: value ? ThemeData.dark() : ThemeData.light(),
-                  home: const HomePage(),
-                ),
-            loadingState: () => const LoadingPage(),
-            orElse: () => const LoadingPage());
+        return state.map(
+          changeState: (value) => MaterialApp(
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: AllLocales.all,
+            theme: value.isDarkTheme ? ThemeData.dark() : ThemeData.light(),
+            home: const HomePage(),
+          ),
+          loadingState: (value) => const LoadingPage(),
+        );
       }),
     );
   }
