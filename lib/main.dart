@@ -4,6 +4,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:word_to_gif/home/blocs/theme/theme_bloc.dart';
 import 'package:word_to_gif/home/home.dart';
+import 'package:word_to_gif/home/navigation/router.dart';
+import 'package:word_to_gif/home/ui_kit/gif_card_page.dart';
 import 'package:word_to_gif/home/ui_kit/loading_page.dart';
 import 'package:word_to_gif/l10n/all_locales.dart';
 
@@ -35,7 +37,12 @@ class _MyAppState extends State<MyApp> {
             ],
             supportedLocales: AllLocales.all,
             theme: value.isDarkTheme ? ThemeData.dark() : ThemeData.light(),
-            home: const HomePage(),
+            initialRoute: MyRoutes.homeRoute,
+            routes: {
+              MyRoutes.loadingRoute: (context) => const LoadingPage(),
+              MyRoutes.homeRoute: (context) => const HomePage(),
+              MyRoutes.gifCardRoute: (context) => const GifPage(),
+            },
           ),
           loadingState: (value) => const LoadingPage(),
         );
