@@ -1,10 +1,10 @@
 part of 'theme_bloc.dart';
 
-@immutable
-abstract class ThemeState {}
 
-class ThemeChangeState extends ThemeState {
-  final bool isDarkTheme;
+@freezed
+class ThemeState with _$ThemeState {
+  factory ThemeState.loadingState() = _LoadingState;
 
-  ThemeChangeState(this.isDarkTheme);
+  factory ThemeState.changeState({required bool isDarkTheme}) =
+      _ChangeState;
 }
