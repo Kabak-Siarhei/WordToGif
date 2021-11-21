@@ -5,7 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:word_to_gif/home/blocs/theme/theme_bloc.dart';
 import 'package:word_to_gif/home/home.dart';
 import 'package:word_to_gif/home/ui_kit/loading_page.dart';
-import 'l10n/all_locales.dart';
+import 'package:word_to_gif/l10n/all_locales.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,29 +21,23 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        BlocProvider<ThemeBloc>(
-          create: (context) => ThemeBloc(),
-        )
-      ],
-      child:
-          BlocBuilder<ThemeBloc, ThemeChangeState>(builder: (context, state) {
-        bool isDarkTheme = false;
-        if (state is ThemeChangeState) {
-          isDarkTheme = state.isDarkTheme;
-        }
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: [
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-          ],
-          supportedLocales: AllLocales.all,
-          theme: isDarkTheme ? ThemeData.dark() : ThemeData.light(),
-          home: HomePage(),
+    return BlocProvider<ThemeBloc>(
+      create: (context) => sl.get<ThemeBloc>()..add(ThemeEvent.initialEvent()),
+      child: BlocBuilder<ThemeBloc, ThemeState>(builder: (context, state) {
+        return state.map(
+          changeState: (value) => MaterialApp(
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: AllLocales.all,
+            theme: value.isDarkTheme ? ThemeData.dark() : ThemeData.light(),
+            home: const HomePage(),
+          ),
+          loadingState: (value) => const LoadingPage(),
         );
       }),
     );

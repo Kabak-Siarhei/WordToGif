@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:word_to_gif/home/repository/service_locator.dart';
 import 'package:word_to_gif/home/repository/shared_preferences.dart';
 
 part 'theme_event.dart';
@@ -20,12 +21,12 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   }
 
   Stream<ThemeState> _initialEvent(_InitialEvent event) async* {
-    final isDarkTheme = await SharedPrefs().getSharedBool(key: themeKey);
+    final isDarkTheme = await sl.get<SharedPrefs>().getSharedBool(key: themeKey);
     yield ThemeState.changeState(isDarkTheme: isDarkTheme);
   }
 
   Stream<ThemeState> _changeEvent(_ChangeEvent event) async* {
-    SharedPrefs().setSharedBool(key: themeKey, val: event.isDarkTheme);
+    sl.get<SharedPrefs>().setSharedBool(key: themeKey, val: event.isDarkTheme);
     yield ThemeState.changeState(isDarkTheme: event.isDarkTheme);
   }
 }
