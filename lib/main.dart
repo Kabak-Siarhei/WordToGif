@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ThemeBloc>(
-      create: (context) => sl.get<ThemeBloc>()..add(ThemeEvent.initialEvent()),
+      create: (context) => getIt.get<ThemeBloc>()..add(ThemeEvent.initialEvent()),
       child: BlocBuilder<ThemeBloc, ThemeState>(builder: (context, state) {
         return state.map(
           changeState: (value) => MaterialApp(

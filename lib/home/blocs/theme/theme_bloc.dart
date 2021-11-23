@@ -21,12 +21,12 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   }
 
   Stream<ThemeState> _initialEvent(_InitialEvent event) async* {
-    final isDarkTheme = await sl.get<SharedPrefs>().getSharedBool(key: themeKey);
+    final isDarkTheme = await getIt.get<SharedPrefs>().getSharedBool(key: themeKey);
     yield ThemeState.changeState(isDarkTheme: isDarkTheme);
   }
 
   Stream<ThemeState> _changeEvent(_ChangeEvent event) async* {
-    sl.get<SharedPrefs>().setSharedBool(key: themeKey, val: event.isDarkTheme);
+    getIt.get<SharedPrefs>().setSharedBool(key: themeKey, val: event.isDarkTheme);
     yield ThemeState.changeState(isDarkTheme: event.isDarkTheme);
   }
 }
