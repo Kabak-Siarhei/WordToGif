@@ -6,6 +6,7 @@ final getIt = GetIt.I;
 
 void setup() {
   getIt.registerLazySingleton<SharedPrefs>(() => SharedPrefs());
-  getIt.registerFactory<ThemeBloc>(() => ThemeBloc());
+
+  getIt.registerFactory<ThemeBloc>(() => ThemeBloc(getIt<SharedPrefs>()));
   
 }
