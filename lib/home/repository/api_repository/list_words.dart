@@ -5,7 +5,8 @@ part 'list_words.g.dart';
 
 @JsonSerializable()
 class ListWords {
-  String definition;
+  @JsonKey(name:'definition')
+  String describe;
   String author;
   String word;
   @JsonKey(name:'written_on')
@@ -16,7 +17,7 @@ class ListWords {
 
   ListWords({
     required this.word,
-    required this.definition,
+    required this.describe,
     required this.author,
     required this.example,
     required this.writtenDate,
@@ -25,7 +26,7 @@ class ListWords {
   @override
   String toString() {
     // TODO: implement toString
-    return '\nword - $word\n definition - $definition\n example - $example\n author - $author\n date - $date\n';
+    return '\nword - $word\n definition - $describe\n example - $example\n author - $author\n date - $date\n';
   }
 
 }
