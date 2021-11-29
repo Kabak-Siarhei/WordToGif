@@ -1,5 +1,7 @@
+import 'package:chopper/chopper.dart';
 import 'package:get_it/get_it.dart';
 import 'package:word_to_gif/home/blocs/theme/theme_bloc.dart';
+import 'package:word_to_gif/home/repository/api_service/api_service_words.dart';
 import 'package:word_to_gif/home/repository/shared_preferences.dart';
 
 final getIt = GetIt.I;
@@ -8,5 +10,12 @@ void setup() {
   getIt.registerLazySingleton<SharedPrefs>(() => SharedPrefs());
 
   getIt.registerFactory<ThemeBloc>(() => ThemeBloc(getIt.get<SharedPrefs>()));
-  
+
+  getIt.registerFactory<ChopperClient>(
+    () => ChopperClient(
+        baseUrl: "https://mashape-community-urban-dictionary.p.rapidapi.com",
+        services: [
+          ListWordsService.create(),
+        ]),
+  );
 }
