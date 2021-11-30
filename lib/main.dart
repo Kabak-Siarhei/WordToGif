@@ -4,10 +4,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:word_to_gif/home/blocs/theme/theme_bloc.dart';
 import 'package:word_to_gif/home/home.dart';
+import 'package:word_to_gif/home/repository/service_locator.dart';
 import 'package:word_to_gif/home/ui_kit/loading_page.dart';
-import 'l10n/all_locales.dart';
+import 'package:word_to_gif/l10n/all_locales.dart';
 
 void main() {
+  setup();
   runApp(const MyApp());
 }
 
@@ -22,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ThemeBloc>(
-      create: (context) => ThemeBloc()..add(ThemeEvent.initialEvent()),
+      create: (context) => getIt.get<ThemeBloc>()..add(ThemeEvent.initialEvent()),
       child: BlocBuilder<ThemeBloc, ThemeState>(builder: (context, state) {
         return state.map(
           changeState: (value) => MaterialApp(
