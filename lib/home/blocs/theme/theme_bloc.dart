@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:word_to_gif/home/repository/shared_preferences.dart';
+import 'package:word_to_gif/home/api/shared_preferences.dart';
 
 part 'theme_event.dart';
 

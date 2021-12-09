@@ -8,7 +8,7 @@ analyzer:
     invalid_annotation_target: ignore
   strong-mode:
     implicit-casts: false
-    implicit-dynamic: false
+    implicit-dynamic: true
 
 linter:
   rules:

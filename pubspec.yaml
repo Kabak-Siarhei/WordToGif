@@ -26,6 +26,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_bloc: ^7.1.0
+  japx: ^2.0.3
   shared_preferences: ^2.0.7
   intl: ^0.17.0
   freezed_annotation: ^0.15.0

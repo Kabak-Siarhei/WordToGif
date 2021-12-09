@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'list_words.dart';
+part of 'api_list_words.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

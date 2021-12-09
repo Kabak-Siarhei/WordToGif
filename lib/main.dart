@@ -2,15 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:logging/logging.dart';
+import 'package:word_to_gif/home/api/service_locator.dart';
 import 'package:word_to_gif/home/blocs/theme/theme_bloc.dart';
 import 'package:word_to_gif/home/home.dart';
-import 'package:word_to_gif/home/repository/service_locator.dart';
 import 'package:word_to_gif/home/ui_kit/loading_page.dart';
 import 'package:word_to_gif/l10n/all_locales.dart';
 
 void main() {
+  _setupLogging();
   setup();
   runApp(const MyApp());
+}
+
+void _setupLogging() {
+  Logger.root.level = Level.ALL;
+  Logger.root.onRecord.listen((rec) {
+    print('${rec.level.name}: ${rec.time}: ${rec.message}');
+  });
 }
 
 class MyApp extends StatefulWidget {
