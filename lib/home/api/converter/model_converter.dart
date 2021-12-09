@@ -1,7 +1,5 @@
 import 'package:chopper/chopper.dart';
-import 'package:japx/japx.dart';
 import 'package:word_to_gif/home/api/models/api_list.dart';
-import 'package:word_to_gif/home/api/models/api_list_words.dart';
 
 class ModelConverter extends JsonConverter {
   @override
